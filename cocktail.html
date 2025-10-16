@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail Finder</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./cocktail.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/0290978bda.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="cocktail__nav--container">
+      <nav class="cocktail__nav">
+        <div class="nav__container">
+          <div class="logo__container">
+            <div class="logo">C.F.</div>
+            <h2 class="logo__name">Cocktail Finder</h2>
+          </div>
+          <ul class="nav__links">
+            <li class="nav__link">
+              <a href="./index.html" class="link">Home</a>
+            </li>
+            <li class="nav__link">
+              <a href="#" class="link">Search</a>
+            </li>
+            <li class="nav__link">
+              <button type="button" class="btn nav__btn">Contact</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="search__content row">
+        <h1 class="section__title search__title">Browse Cocktails</h1>
+        <form id="user__search" onsubmit="fetchCocktails(userInput.value.trim())">
+          <div class="cocktail__search">
+            <input
+              type="text"
+              class="search__input cocktail__search--input"
+              placeholder="Search by Ingredient..."
+              onchange=""
+            />
+            <button type="submit" class="btn cocktail__search--btn">
+              <i class="fa-solid fa-magnifying-glass search__icon"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="loading-line"></div>
+    <section id="results">
+      <div class="container">
+        <div class="results__row row">
+
+          <div class="results__description">
+            <h2 class="results__title">Search Results for <span class="user-search"></span>:</h2>
+            <div class="filter__container">
+              <select class="search__filter" id="sort" onchange="sortSearch(event.target.value)">
+                <option value="default" class="filter__option" disabled selected>Sort</option>
+                <option value="A_TO_Z" class="filter__option">A to Z</option>
+                <option value="Z_TO_A" class="filter__option">Z to A</option>
+              </select>
+              <!-- <button type="button" class="search__filter--btn">Sort By</button>
+              <div class="filter__content">
+              </div> -->
+            </div>
+          </div>
+          <div class="user__results">
+          </div>
+          <div class="loading">
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>
