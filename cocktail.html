@@ -11,7 +11,32 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
+    <div class="modal">
+      <button class="btn__modal btn__modal--close" onclick="closeMenu()">
+       <svg
+         xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         class="light___StyledCloseIcon-lj69nl-14 fASujC"
+       >
+         <line x1="18" y1="6" x2="6" y2="18"></line>
+         <line x1="6" y1="6" x2="18" y2="18"></line>
+       </svg>
+     </button>
+      <ul class="modal__links">
+        <li class="modal__link"><a href="./index.html" class="modal__link--anchor">Home</a></li>
+        <li class="modal__link"><a href="./cocktail.html" class="modal__link--anchor">Search</a></li>
+        <li class="modal__link"><a href="#" class="modal__link__anchor no-link" >Contact</a></li>
+      </ul>
+    </div>
     <div class="cocktail__nav--container">
       <nav class="cocktail__nav">
         <div class="nav__container">
@@ -30,6 +55,24 @@
               <button type="button" class="btn nav__btn">Contact</button>
             </li>
           </ul>
+          <button class="btn__modal" onclick="openMenu()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="btn__menu--svg"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </nav>
 
@@ -58,7 +101,7 @@
           <div class="results__description">
             <h2 class="results__title">Search Results for <span class="user-search"></span>:</h2>
             <div class="filter__container">
-              <select class="search__filter" id="sort" onchange="sortSearch(event.target.value)">
+              <select class="search__filter" id="sort" onchange="displaySearch(event.target.value)">
                 <option value="default" class="filter__option" disabled selected>Sort</option>
                 <option value="A_TO_Z" class="filter__option">A to Z</option>
                 <option value="Z_TO_A" class="filter__option">Z to A</option>
