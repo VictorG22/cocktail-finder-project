@@ -7,7 +7,7 @@ homeForm.addEventListener('submit', (e) => {
   const query = homeInput.value.trim();
   if (query) {
     localStorage.setItem('search', query); // Save for next page
-    window.location.href = `${window.location.origin}/cocktail.html`; // Redirect
+    window.location.href = `${window.location.origin}/cocktail-finder-project/cocktail.html`; // Redirect
   }
 });
 
