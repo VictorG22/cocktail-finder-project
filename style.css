@@ -255,14 +255,14 @@ header {
 .home__content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: space-between;
+  align-items: center;
   text-align: center;
 }
 
 .home__title,
 .home__sub-title {
   max-width: 800px;
+  margin-inline: auto;
 }
 
 .home__title {
@@ -282,6 +282,9 @@ header {
 
 .search {
   width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
+  gap: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -291,7 +294,7 @@ header {
 .search__input {
   outline: none;
   border: 2px solid var(--primary);
-  width: 70%;
+  flex: 1;
   max-width: 600px;
   padding: 16px 24px;
   border-radius: 12px;
@@ -311,7 +314,11 @@ header {
 .search__btn {
   background-color: var(--primary);
   height: 100%;
-  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  flex-shrink: 0;
   border-radius: 12px;
 }
 
@@ -391,6 +398,7 @@ header {
 .cocktail__search {
   position: relative;
   width: 100%;
+  max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,17 +408,22 @@ header {
 
 .cocktail__search--input {
   width: 100%;
-  padding-right: 72px;
+  padding: 20px 72px 20px 24px;
   font-size: 24px;
+  border-radius: 12px;
 }
 
 .cocktail__search--btn {
   position: absolute;
+  top: 50%;
+  right: 8px;                  /* 👈 anchor to container */
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
   background: none;
-  width: 72px;
-  height: 72px;
-  right: calc(50% - 300px);
-  transition: 300ms all ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search__icon{
@@ -597,7 +610,7 @@ header {
     width: 90px;
   }
   .logo__name{
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .section__title{
@@ -612,6 +625,10 @@ header {
     font-size: 20px;
   }
 
+  .search__btn{
+    width: 60px;
+  }
+
   .fa-magnifying-glass{
     font-size: 28px;
   }
@@ -620,12 +637,17 @@ header {
     width: 70%;
   }
 
-  .cocktail__search--btn{
-    right: calc(50% - 165px);
-  }
 
   .results__description{
-    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .filter__container{
+    margin: 0;
   }
 
   .results__title,
